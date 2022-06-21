@@ -4,10 +4,12 @@ import {
   applyMiddleware,
 } from 'redux';
 import thunk from 'redux-thunk';
-import stateSlice from './us_states/current_us_state'
+import stateSlice from './usCities/UScities'
+import ShareState from './usStates/ShareState';
 
 const rootReducer = combineReducers({
-  states: stateSlice
+  states: stateSlice,
+  shareState: ShareState,
 })
 const store = createStore(rootReducer, applyMiddleware(thunk))
 export default store

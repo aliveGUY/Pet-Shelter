@@ -6,15 +6,8 @@ import {
 import UsaStaes from './components/us_states';
 import Cities from './components/cities';
 import Shelters from './components/shelters';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { getState } from './redux/us_states/current_us_state';
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getState());
-  })
   return (
     <Router>
       <Routes>
