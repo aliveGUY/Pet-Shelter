@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Shelter */
+
+.Shelter-Card {
+  background-color: rgba(219, 88, 88, 0.568);
+  display: flex;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.Shelter-Card img {
+  width: 100px;
+  height: auto;
+  margin: 20px;
+}
+
+.Shelter-title {
+  display: table;
+}

@@ -7,7 +7,7 @@ const Shelters = () => {
   const staeCODE = useSelector((state) => state.shareState)
   let shelters
   if (!usState[0].loads) {
-    shelters = usState.filter((item) => item.contact.address.state === staeCODE)
+    shelters = usState.filter((item) => item.contact.address.city === staeCODE.city)
   }
   return (
     <div>
@@ -16,32 +16,28 @@ const Shelters = () => {
       <ul>
         {usState[0].loads
           ? 'Finding for you new friend'
-          : shelters.map((shelter, i) => {
-              console.log(
-                !shelter.primary_photo_cropped
-                  ? '#'
-                  : shelter.primary_photo_cropped.small,
-              )
-              return (
-                <li key={i}>
-                  <NavLink to="/">
+          : shelters.map((shelter, i) => (
+              <li key={i}>
+                <NavLink to="/">
+                  <div className="Shelter-Card">
+                    <img
+                      src={
+                        !shelter.primary_photo_cropped
+                          ? require('./logo.png')
+                          : shelter.primary_photo_cropped.small
+                      }
+                      alt="Avatar"
+                    />
                     <div>
-                      <img
-                        src={
-                          !shelter.primary_photo_cropped
-                            ? '#'
-                            : shelter.primary_photo_cropped.small
-                        }
-                        alt="Avatar"
-                      />
-                      <h4>
+                      <h4 className="Shelter-title">
                         {shelter.name} the {shelter.species}
                       </h4>
+                      <p>{shelter.description}</p>
                     </div>
-                  </NavLink>
-                </li>
-              )
-            })}
+                  </div>
+                </NavLink>
+              </li>
+            ))}
       </ul>
     </div>
   )

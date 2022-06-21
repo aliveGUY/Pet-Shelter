@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { getState } from '../redux/usCities/UScities'
 import { useEffect } from 'react'
+import { pickState } from '../redux/usStates/ShareState'
 
 const Cities = () => {
   const dispatch = useDispatch()
   const usState = useSelector((state) => state.states)
   const staeCODE = useSelector((state) => state.shareState)
   useEffect(() => {
-    dispatch(getState(staeCODE))
+    dispatch(getState(staeCODE.state))
   }, [])
   return (
     <div>
@@ -20,7 +21,17 @@ const Cities = () => {
           ? ''
           : usState.map((item, i) => (
               <li key={i}>
-                <NavLink to="/cities/shelters">
+                <NavLink
+                  to="/cities/shelters"
+                  onClick={() =>
+                    dispatch(
+                      pickState({
+                        city: item.contact.address.city,
+                        state: item.contact.address.state,
+                      }),
+                    )
+                  }
+                >
                   {item.contact.address.city} {item.contact.address.state}
                 </NavLink>
               </li>

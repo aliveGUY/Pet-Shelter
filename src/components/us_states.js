@@ -13,7 +13,7 @@ const UsaStaes = () => {
         <ul>
           {states.map((state, i) => (
             <li key={i}>
-              <NavLink to="/cities" onClick={() => dispatch(pickState(state.slice(0,2)))}>
+              <NavLink to="/cities" onClick={() => dispatch(pickState({state: state.slice(0,2), city: null}))}>
                 {state}
               </NavLink>
             </li>
