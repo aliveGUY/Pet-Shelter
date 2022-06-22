@@ -5,7 +5,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 // Secret 9GGUczu5pGaRqMslKUTNttA16zPRAb0O9kuvE9Ez
 
 const access_token =
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJtbUVodHVtd3RvNUx2RTZ5ZHN6RTJ0OUZqOUtpd1dmTlRDUjZISFpMclFEakZtUVViZSIsImp0aSI6IjkzMTM5ZmM0MzQ4ZDMyYjM5YWFlY2U1MDA2YjdlNjdmYjI5MTYwMTRhYmY0MmI1OWNlNDdlMjU3MmI3YjJlZDhhYjBjNGMzZDFiMmU1NjFjIiwiaWF0IjoxNjU1ODM5MjgxLCJuYmYiOjE2NTU4MzkyODEsImV4cCI6MTY1NTg0Mjg4MSwic3ViIjoiIiwic2NvcGVzIjpbXX0.kA1o3zrvJi0cgr7D9MwhtuhFH4dvofXEnA-XT5pZhFz4m29WfuEYB5xV1jICUG8hiXq2Vk9x9WbTQnlCgFMnx2cFt7lXIW5ta_AAax7m5IkH3u7XS9jaEZ_7itVLvY4AnnWtlS2CTtRb7LvrYFQtNn71stWkJjuJp3lGjU2lzf6SjpFgMvsYLUSXLu9KcFuNaT0JdYW6QpG6OQ0moLgOb5UzE664yhnKI_BlBQ5gQdQWGwNJb1p7G0shREoa1ena9JS9IfCYoVDFgjiPGUHwQxYNyMIU0-DGQcbkNA3VSImfKdPzMpYJQAXcX9z6zRMrwqw-4fVsx4HjJEehAqZXIQ'
+  'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJtbUVodHVtd3RvNUx2RTZ5ZHN6RTJ0OUZqOUtpd1dmTlRDUjZISFpMclFEakZtUVViZSIsImp0aSI6IjFmOTAwZjZmZDZlMDAxMWE5ZjRmMjMyZGIzMDE1NGM1ZDg2NmVhYmYwNWJkOTI4OWI2MjFkNWQ2ZTQ4NWI3ODg4Njc5N2NlYjFiMjc3NjdiIiwiaWF0IjoxNjU1ODU2OTg2LCJuYmYiOjE2NTU4NTY5ODYsImV4cCI6MTY1NTg2MDU4Niwic3ViIjoiIiwic2NvcGVzIjpbXX0.TY3FUaL7lvgRqNPoqFCYBAaQ_8ZI3DOUkAqOrmqTHsTDcYMQTxqk4w1WU2d1OXOLGNRK6yEb7oKD0g7o8oHpyOPIEvgd_gIQxeY0d-nOAHiMvAf1SH_Yu_Th5224CJ9gii6QW6iZ-2UlyFzu9eHCWYCwdhNnViAXsJ0n8Yu9HaD2Ue_SFmnymzBXBCFgKvnEvz2LWlL4PfQE4451iWHoRNoH8brn7HfQ9Sys4Y3X5TWEBmPFOriMHg_0FanqujIhMoS61imIFeVPJPVFuEWWg6pkdN0AUO9pH2oEwMNR_fqZqzTYidTfOQfI0UOETcTtQna5PZcT4B-DiuUrTPD_nA'
 export const getState = createAsyncThunk('FETCHED_CITIES', async (code) => {
   const response = await axios
     .get(`https://api.petfinder.com/v2/animals?location=${code}`, {
@@ -14,12 +14,16 @@ export const getState = createAsyncThunk('FETCHED_CITIES', async (code) => {
       },
     })
     .then((response) => response.data)
+    .catch((err) => err)
+
   return response.animals
 })
 
+let init = [{ loads: true }]
+
 const stateSlice = createSlice({
   name: 'states',
-  initialState: [{ loads: true }],
+  initialState: init,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -27,10 +31,11 @@ const stateSlice = createSlice({
         return [{ loads: true }]
       })
       .addCase(getState.fulfilled, (state, action) => {
+        init = action.payload
         return action.payload
       })
   },
 })
 
-export const {enterShelter, leaveShelter} = stateSlice.actions;
+export const { enterShelter, leaveShelter } = stateSlice.actions
 export default stateSlice.reducer

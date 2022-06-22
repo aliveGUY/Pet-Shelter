@@ -2,11 +2,59 @@
   margin: 0;
   padding: 0;
 }
+html {
+  background-color: #F8A1D1;
+}
+
+/* States */
+
+.State a{
+  display: table;
+  padding: 20px 0;
+  width: 50%;
+  float: left;
+  text-decoration: none;
+}
+
+.State-text {
+  float: right;
+  color: #fff;
+  font-size: 20px;
+}
+
+.State-image{
+  height: 50px;
+  width: 50px;
+}
+.States-wrapper .State:nth-child(6n+2) a, .State:nth-child(6n+3) a{
+  background-color: #d3549a;
+}
+.States-wrapper .State:nth-child(6n+4) a, .State:nth-child(6n+5) a{
+  background-color: #E36BAE
+}
+
+/*Cities */
+
+.Cities-wrapper {
+  float: left;
+  width: 50vw;
+  aspect-ratio: 1/1;
+  background-color: #eb8dc0;
+}
+
+.Cities-wrapper:nth-child(6n+2), .Cities-wrapper:nth-child(6n+3){
+  background-color: #d3549a;
+}
+.Cities-wrapper:nth-child(6n+4), .Cities-wrapper:nth-child(6n+5){
+  background-color: #E36BAE;
+}
+.City {
+  text-decoration: none;
+  color: #fff;
+}
 
 /* Shelter */
-
 .Shelter-Card {
-  background-color: rgba(219, 88, 88, 0.568);
   display: flex;
   width: 100%;
   margin: 5px 0;

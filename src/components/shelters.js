@@ -23,7 +23,7 @@ const Shelters = () => {
                     <img
                       src={
                         !shelter.primary_photo_cropped
-                          ? require('./logo.png')
+                          ? require('../img/logo.png')
                           : shelter.primary_photo_cropped.small
                       }
                       alt="Avatar"
