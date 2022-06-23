@@ -1,15 +1,15 @@
-import renderer from 'react-test-renderer'
-import configureMockStore from 'redux-mock-store'
-import thunk from 'redux-thunk'
+import renderer from 'react-test-renderer';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 
-import { fireEvent, render, screen } from '@testing-library/react'
-import { Provider } from 'react-redux'
-import '@testing-library/jest-dom'
-import { dog } from './dog'
-import App from '../App'
+import { fireEvent, render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import '@testing-library/jest-dom';
+import dog from './dog';
+import App from '../App';
 
-const middlewares = [thunk]
-const mockStore = configureMockStore(middlewares)
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 const store = mockStore({
   states: dog,
   shareState: {
@@ -19,7 +19,7 @@ const store = mockStore({
     picked: true,
   },
   pets: dog,
-})
+});
 
 describe('Testing components rendering', () => {
   test('States', () => {
@@ -29,11 +29,11 @@ describe('Testing components rendering', () => {
           <App />
         </Provider>,
       )
-      .toJSON()
+      .toJSON();
 
-    expect(tree).toMatchSnapshot()
-  })
-})
+    expect(tree).toMatchSnapshot();
+  });
+});
 
 describe('Testing buttons', () => {
   test('Pick States', () => {
@@ -41,20 +41,18 @@ describe('Testing buttons', () => {
       <Provider store={store}>
         <App />
       </Provider>,
-    )
+    );
 
-    fireEvent.click(screen.getByText('Alaska'))
-    const firedAction = store.getActions()
+    fireEvent.click(screen.getByText('Alaska'));
+    const firedAction = store.getActions();
     expect(firedAction.length).not.toBe(0);
-  })
+  });
   test('State Picked', () => {
-    const tree = renderer
-      .create(
-        <Provider store={store}>
-          <App />
-        </Provider>,
-      )
-      .toJSON()
-    expect(screen.queryByLabelText('Alaska')).not.toBeInTheDocument()
-  })
-})
+    render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+    );
+    expect(screen.queryByLabelText('Alaska')).not.toBeInTheDocument();
+  });
+});

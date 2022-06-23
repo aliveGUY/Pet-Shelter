@@ -1,14 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const petSlice = createSlice({
   name: 'shareState',
   initialState: [],
   reducers: {
     pickPet(state, action) {
-      return action.payload
+      return action.payload;
     },
   },
-})
+});
 
-export const { pickPet } = petSlice.actions
-export default petSlice.reducer
+export const { pickPet } = petSlice.actions;
+export default petSlice.reducer;

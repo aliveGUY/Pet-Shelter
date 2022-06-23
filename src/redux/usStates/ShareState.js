@@ -1,17 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const shareState = createSlice({
   name: 'shareState',
   initialState: [],
   reducers: {
     pickState(state, action) {
-      return action.payload
+      return action.payload;
     },
-    unpickState(state, action) {
-      state.picked = false;
-    }
+    unpickState(state) {
+      const temp = state;
+      temp.picked = false;
+      return temp;
+    },
   },
-})
+});
 
-export const { pickState, unpickState } = shareState.actions
-export default shareState.reducer
+export const { pickState, unpickState } = shareState.actions;
+export default shareState.reducer;

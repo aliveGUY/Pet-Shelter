@@ -1,15 +1,13 @@
-import { useSelector } from 'react-redux'
-import Towns from './cities'
-import { Routes, Route } from 'react-router-dom'
-import Shelters from './shelters'
-import { NavLink } from 'react-router-dom'
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
-import { unpickState } from '../redux/usStates/ShareState'
-import { useDispatch } from 'react-redux'
+import { Routes, Route, NavLink } from 'react-router-dom';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { useDispatch, useSelector } from 'react-redux';
+import { unpickState } from '../redux/usStates/ShareState';
+import Shelters from './shelters';
+import Towns from './cities';
 
 const MidSection = () => {
-  const staeCODE = useSelector((state) => state.shareState)
-  const dispatch = useDispatch()
+  const staeCODE = useSelector((state) => state.shareState);
+  const dispatch = useDispatch();
   return (
     <div>
       <NavLink to={-1} onClick={() => dispatch(unpickState())}>
@@ -19,7 +17,11 @@ const MidSection = () => {
         <div className="Cities-IMG-wrapper">
           <img
             className="Cities-Image"
-            src={require(`../img/${staeCODE.state}.png`)}
+            src={
+              /* eslint-disable */ 
+              require(`../img/${staeCODE.state}.png`)
+              /* eslint-enable */
+            }
             alt="state"
           />
         </div>
@@ -38,7 +40,7 @@ const MidSection = () => {
         <Route exact path="/shelters" element={<Shelters />} />
       </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default MidSection
+export default MidSection;

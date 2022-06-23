@@ -1,4 +1,4 @@
-export const dog = [
+const dog = [
   {
     age: 'Adult',
 
@@ -32,4 +32,6 @@ export const dog = [
     status_changed_at: '2022-06-23T17:40:15+0000',
     type: 'Dog',
   },
-]
+];
+
+export default dog;
