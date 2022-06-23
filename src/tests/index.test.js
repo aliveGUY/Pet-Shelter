@@ -7,7 +7,6 @@ import { Provider } from 'react-redux'
 import '@testing-library/jest-dom'
 import { dog } from './dog'
 import App from '../App'
-import UsaStaes from '../components/us_states'
 
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
