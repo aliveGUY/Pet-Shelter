@@ -7,6 +7,7 @@ const PetPage = () => {
   const petInfo = useSelector((state) => state.pets)
   const published = new Date(petInfo.published_at)
   const updated = new Date(petInfo.published_at)
+  console.log(petInfo)
   return (
     <div>
       <NavLink to={-1}>
