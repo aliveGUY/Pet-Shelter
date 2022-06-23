@@ -7,8 +7,11 @@ const shareState = createSlice({
     pickState(state, action) {
       return action.payload
     },
+    unpickState(state, action) {
+      state.picked = false;
+    }
   },
 })
 
-export const { pickState } = shareState.actions
+export const { pickState, unpickState } = shareState.actions
 export default shareState.reducer

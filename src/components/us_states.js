@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { states } from './STATES_DATA'
 import { pickState } from '../redux/usStates/ShareState'
+import EastIcon from '@mui/icons-material/East'
 
 const UsaStaes = () => {
   const dispatch = useDispatch()
@@ -12,7 +13,7 @@ const UsaStaes = () => {
         <img src={require(`../img/Cat.png`)} alt="Cat" />
         <div className="States-Headline-Titles"></div>
       </div>
-      <h1>Pick State</h1>
+      <h3 className="MidSection-Title">Pick state</h3>
       <div>
         <div className="States-wrapper">
           {states.map((state, i) => (
@@ -35,8 +36,10 @@ const UsaStaes = () => {
                     alt="state"
                   />
                 </div>
-
-                <p className="State-text">{state.slice(5)}</p>
+                <div className="State-text">
+                  <EastIcon className="IosIcon-circle" />
+                  <p>{state.slice(5)}</p>
+                </div>
               </NavLink>
             </div>
           ))}

@@ -2,18 +2,40 @@
   margin: 0;
   padding: 0;
 }
+
 html {
   --superlight-pink: #fc5193;
   --light-pink: #ec4c8a;
   --pink: #df4782;
   --dark-pink: #d04378;
-  --superdark-pink: #B13967 ;
+  --superdark-pink: #B13967;
   --balck: #222124;
   background-color: var(--light-pink);
+  color: #fff;
+}
+
+.IosIcon {
+  margin: 5px;
+  color: #fff;
+}
+
+.IosIcon-circle {
+  color: #fff;
+  margin: 5px;
+  border: 2px #fff solid;
+  border-radius: 50%;
+  font-size: 18px !important;
 }
 
 a {
   text-decoration: none;
+}
+
+/* Mid-section */
+
+.MidSection-Title {
+  background-color: var(--dark-pink);
+  padding: 5px 5px 10px 15px;
 }
 
 /* States */
@@ -21,9 +43,9 @@ a {
   position: relative;
   height: 40vh;
   box-shadow:
-  inset 50px 0px 40px -25px rgba(0, 0, 0, 0.6),
-  inset 180px 0px 150px -25px var(--balck),
-  inset -200px 0px 100px -25px var(--light-pink);
+    inset 50px 0px 40px -25px rgba(0, 0, 0, 0.6),
+    inset 180px 0px 150px -25px var(--balck),
+    inset -200px 0px 100px -25px var(--light-pink);
 }
 
 
@@ -41,34 +63,49 @@ a {
   height: 100%;
 }
 
-.State a{
-  display: table;
-  padding: 20px 0;
+.State a {
+  text-align: right;
+  display: flex;
   width: 50%;
   float: left;
   text-decoration: none;
 }
 
 .State-text {
-  float: right;
+  width: 100%;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
+  padding: 10px 10px 10px 0;
+}
+
+.State-text p {
+  width: 100%;
+  text-align: left;
 }
 
 #State-img-wrapper {
-  height: 50px;
-  width: 50px;
+  margin: 10px 15px;
+  float: left;
+  height: 80px;
+  width: 90px;
 }
-#State-img-wrapper img{
+
+#State-img-wrapper img {
   width: 100%;
-  height: 100%; 
+  height: 100%;
   object-fit: contain;
 }
-.States-wrapper .State:nth-child(6n+2) a, .State:nth-child(6n+3) a{
-  background-color: var(--pink);
-}
-.States-wrapper .State:nth-child(6n+4) a, .State:nth-child(6n+5) a{
+
+.States-wrapper .State:nth-child(3n-3) a {
   background-color: var(--dark-pink);
+}
+
+.States-wrapper .State:nth-child(3n-2) a {
+  background-color: var(--pink);
 }
 
 /*Cities */
@@ -79,6 +116,14 @@ a {
   aspect-ratio: 1/1;
   background-color: var(--light-pink);
 }
+
+.Cities-enter {
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  transform: translate(-10px, +10px);
+}
+
 .Cities-Healine {
   display: flex;
   background-color: var(--superlight-pink);
@@ -86,9 +131,12 @@ a {
 
 .Cities-Headline-Title {
   color: #fff;
+  display: table;
+  margin: auto;
 }
 
 .Cities-IMG-wrapper {
+  margin: 15px 15px;
   height: 150px;
   width: 150px;
 }
@@ -99,12 +147,16 @@ a {
   object-fit: contain;
 }
 
-.Cities-wrapper:nth-child(6n+2), .Cities-wrapper:nth-child(6n+3){
+.Cities-wrapper:nth-child(6n+2),
+.Cities-wrapper:nth-child(6n+3) {
   background-color: var(--pink);
 }
-.Cities-wrapper:nth-child(6n+4), .Cities-wrapper:nth-child(6n+5){
+
+.Cities-wrapper:nth-child(6n+4),
+.Cities-wrapper:nth-child(6n+5) {
   background-color: var(--dark-pink);
 }
+
 .City {
   text-align: right;
   display: flex;
@@ -131,6 +183,7 @@ a {
 .Shelters li:nth-child(even) {
   background-color: var(--dark-pink);
 }
+
 .Shelter-Card {
   display: flex;
   justify-content: space-between;
@@ -161,31 +214,49 @@ a {
 }
 
 /* Pet page */
-.PetPage-Headline {
-  display: flex;
-  height: 30vh;
-}
 
-.PetPage-Headline-IMG-Wrapper {
-  background-color: var(--superdark-pink);
-  height: 100%;
-  aspect-ratio: 1/1;
-}
-
-.PetPage-Headline-IMG-Wrapper img {
-  height: 100%;
+.PetPage-Headline-Info {
   width: 100%;
-  object-fit: contain;
+}
+
+.PetPage-Date {
+  text-align: right;
+}
+
+.PetPage-Headline {
+  background-color: var(--superlight-pink);
+  display: flex;
+  height: auto;
+  padding: 14px;
+}
+
+.PetImages-scroll {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.PetImages-Container {
+  display: flex;
+  width: max-content;
 }
 
 .PetPage-Images {
+  margin: 10px;
   background-color: var(--superdark-pink);
   aspect-ratio: 1/1;
-  height: 150px;
+  height: 200px;
 }
 
-.PetPage-Images  img {
+.PetPage-Images img {
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+.PetPage-Title {
+  background-color: var(--dark-pink);
+}
+
+.PetPage-Info {
+  padding: 14px;
 }

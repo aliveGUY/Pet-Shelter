@@ -1,37 +1,69 @@
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { getStates_US } from '../redux/usCities/UScities'
+import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import { getStates_US } from '../redux/usCities/UScities'
 import { pickState } from '../redux/usStates/ShareState'
-import Towns from './cities_comp'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Shelters from './shelters'
-const Cities = () => {
-  const staeCODE = useSelector((state) => state.shareState)
+import EastIcon from '@mui/icons-material/East'
 
+const Towns = () => {
+  const dispatch = useDispatch()
+  const usState = useSelector((state) => state.states)
+  const staeCODE = useSelector((state) => state.shareState)
+  useEffect(() => {
+    dispatch(getStates_US(staeCODE.state))
+  }, [])
+  let count = []
+  let cities = []
+  if (!usState[0].loads) {
+    let stack = []
+    cities = usState.filter((item) => {
+      if (stack.includes(item.contact.address.city)) {
+        count[stack.indexOf(item.contact.address.city)] += 1
+      } else {
+        stack.push(item.contact.address.city)
+        count[stack.indexOf(item.contact.address.city)] = 1
+        return item
+      }
+    })
+  }
   return (
     <div>
-      <div className="Cities-Healine">
-        <div className="Cities-IMG-wrapper">
-          <img
-            className="Cities-Image"
-            src={require(`../img/${staeCODE.state}.png`)}
-            alt="state"
-          />
-        </div>
-
-        <div className="Cities-Headline-Title">
-          <h1>{staeCODE.state_full}</h1>
-          <p>Counter of shelters</p>
-        </div>
+      <div>
+        {usState[0].loads
+          ? ''
+          : cities.map((item, i) => (
+              <div key={i} className="Cities-wrapper">
+                <NavLink
+                  className="City"
+                  to="/cities/shelters"
+                  onClick={() =>
+                    dispatch(
+                      pickState({
+                        city: item.contact.address.city,
+                        state_full: staeCODE.state_full,
+                        state: staeCODE.state,
+                        picked: true,
+                      }),
+                    )
+                  }
+                >
+                  <div className="Cities-enter">
+                    <EastIcon className="IosIcon-circle" />
+                  </div>
+                  <div className="Cities-Carf-Info">
+                    <p className="Cities-Card-Title">
+                      {item.contact.address.city}
+                    </p>
+                    <p className="Cities-Card-Count">{count[i]}</p>
+                    <p>{staeCODE.state_full}</p>
+                  </div>
+                </NavLink>
+              </div>
+            ))}
       </div>
-      <h3> Adoptable pets by city</h3>
-      <Routes>
-        <Route exact path="/" element={<Towns />} />
-        <Route exact path="/shelters" element={<Shelters />} />
-      </Routes>
     </div>
   )
 }
 
-export default Cities
+export default Towns
