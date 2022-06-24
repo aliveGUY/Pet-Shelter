@@ -1,42 +1,36 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Pet Shelter
 
-> Description the project.
+> This application allows to interact with official petfinder API
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- JS
+- React, Node.js, Redux
+- axios, redux-toolkit, etc
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+#### [Live Demo Link](https://the-great-aliveguy-site.netlify.app/)
+#### [Video](https://www.loom.com/share/209d8e5054ae4ddd8a468ab54510162a)
 
 
-To get a local copy up and running follow these simple example steps.
+## Usage  <img src="https://img.icons8.com/external-filled-outline-geotatah/344/external-engine-merger-and-acquisition-filled-outline-filled-outline-geotatah.png" alt="Bootstrap Icon" style="width: 50px; height: 50px">
 
-### Prerequisites
+Be sure to have [Node.js](https://nodejs.org/) installed before proceeding.
 
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+```shell
+# Clone the repo
+git clone https://github.com/aliveGUY/travelers-hub
+# Change directory
+cd travelers-hub
+# Install dependencies
+npm i
+# Start local server
+npm run start
+```
 
 ## Authors
 
@@ -46,11 +40,17 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
-👤 **Author2**
+👤 **Illia Dubrovin**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/aliveGUY)
+- Twitter: [@twitterhandle](https://twitter.com/Sciborskyy)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ilya-dubrovin-921a2721b/)
+
+## CC BY-NC
+- [Author of otiginal layout](https://www.behance.net/sakwadesignstudio)
+> Please dont forget to also visit Nelson Sakwa portfolio!
+- [Original layout](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
+[my mit](https://github.com/aliveGUY/Pet-Shelter/blob/master/MIT.md)
 
 ## 🤝 Contributing
 

@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  --superlight-pink: #fc5193;
+  --light-pink: #ec4c8a;
+  --pink: #df4782;
+  --dark-pink: #d04378;
+  --superdark-pink: #b13967;
+  --balck: #222124;
+
+  background-color: var(--light-pink);
+  color: #fff;
+}
+
+.IosIcon {
+  margin: 5px;
+  color: #fff;
+}
+
+.IosIcon-circle {
+  color: #fff;
+  margin: 5px;
+  border: 2px #fff solid;
+  border-radius: 50%;
+  font-size: 18px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Mid-section */
+
+.MidSection-Title {
+  background-color: var(--dark-pink);
+  padding: 5px 5px 10px 15px;
+}
+
+/* States */
+.States-Headline {
+  position: relative;
+  height: 40vh;
+  box-shadow:
+    inset 50px 0 40px -25px rgba(0, 0, 0, 0.6),
+    inset 180px 0 150px -25px var(--balck),
+    inset -200px 0 100px -25px var(--light-pink);
+}
+
+.States-Headline img {
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+.States-Headline-Titles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+.State a {
+  text-align: right;
+  display: flex;
+  width: 50%;
+  float: left;
+  text-decoration: none;
+}
+
+.State-text {
+  width: 100%;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 10px 10px 0;
+}
+
+.State-text p {
+  width: 100%;
+  text-align: left;
+}
+
+.PetPage-Info {
+  padding: 14px;
+}
+
+.PetPage-Images img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.Shelter-Image-Wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+#State-img-wrapper {
+  margin: 10px 15px;
+  float: left;
+  height: 80px;
+  width: 90px;
+}
+
+#State-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.States-wrapper .State:nth-child(3n-3) a {
+  background-color: var(--dark-pink);
+}
+
+.States-wrapper .State:nth-child(3n-2) a {
+  background-color: var(--pink);
+}
+
+/* Cities */
+
+.Cities-wrapper {
+  float: left;
+  width: 50vw;
+  aspect-ratio: 1/1;
+  background-color: var(--light-pink);
+}
+
+.Cities-enter {
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  transform: translate(-10px, +10px);
+}
+
+.Cities-Healine {
+  display: flex;
+  background-color: var(--superlight-pink);
+}
+
+.Cities-Headline-Title {
+  color: #fff;
+  display: table;
+  margin: auto;
+}
+
+.Cities-IMG-wrapper {
+  margin: 15px 15px;
+  height: 150px;
+  width: 150px;
+}
+
+.Cities-Image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.Cities-wrapper:nth-child(6n+2),
+.Cities-wrapper:nth-child(6n+3) {
+  background-color: var(--pink);
+}
+
+.Cities-wrapper:nth-child(6n+4),
+.Cities-wrapper:nth-child(6n+5) {
+  background-color: var(--dark-pink);
+}
+
+.City {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+}
+
+.Cities-Carf-Info {
+  padding: 12px;
+}
+
+.Cities-Card-Title {
+  font-size: 23px;
+}
+
+.Cities-Card-Count {
+  font-size: 20px;
+}
+
+/* Shelter */
+.Shelters li:nth-child(even) {
+  background-color: var(--dark-pink);
+}
+
+.Shelter-Card {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.Shelter-Image-Wrapper {
+  margin: 10px;
+  background-color: var(--superdark-pink);
+  height: 100px;
+  width: 100px;
+}
+
+.Shelter-Info {
+  margin: 10px;
+  width: 70%;
+  color: #fff;
+}
+
+.Shelter-title {
+  display: table;
+}
+
+/* Pet page */
+
+.PetPage-Headline-Info {
+  width: 100%;
+}
+
+.PetPage-Date {
+  text-align: right;
+}
+
+.PetPage-Headline {
+  background-color: var(--superlight-pink);
+  display: flex;
+  height: auto;
+  padding: 14px;
+}
+
+.PetImages-scroll {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.PetImages-Container {
+  display: flex;
+  width: max-content;
+}
+
+.PetPage-Images {
+  margin: 10px;
+  background-color: var(--superdark-pink);
+  aspect-ratio: 1/1;
+  height: 200px;
+}
+
+.PetPage-Title {
+  background-color: var(--dark-pink);
+}
