@@ -13,8 +13,8 @@
 
 ## Live Demo
 
-[Live Demo Link](https://the-great-aliveguy-site.netlify.app/cities)
-[Video](https://www.loom.com/share/209d8e5054ae4ddd8a468ab54510162a)
+#### [Live Demo Link](https://the-great-aliveguy-site.netlify.app/)
+#### [Video](https://www.loom.com/share/209d8e5054ae4ddd8a468ab54510162a)
 
 
 ## Usage  <img src="https://img.icons8.com/external-filled-outline-geotatah/344/external-engine-merger-and-acquisition-filled-outline-filled-outline-geotatah.png" alt="Bootstrap Icon" style="width: 50px; height: 50px">
