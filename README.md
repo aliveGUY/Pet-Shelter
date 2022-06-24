@@ -46,6 +46,10 @@ npm run start
 - Twitter: [@twitterhandle](https://twitter.com/Sciborskyy)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ilya-dubrovin-921a2721b/)
 
+## CC BY-NC
+# [Author of otiginal layout](https://www.behance.net/sakwadesignstudio)
+# [Original layout](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
