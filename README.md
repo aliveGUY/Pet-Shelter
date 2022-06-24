@@ -48,7 +48,9 @@ npm run start
 
 ## CC BY-NC
 # [Author of otiginal layout](https://www.behance.net/sakwadesignstudio)
+## Please dont forget to also visit Nelson Sakwa portfolio!
 # [Original layout](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
+[my mit](https://github.com/aliveGUY/Pet-Shelter/blob/master/MIT.md)
 
 ## 🤝 Contributing
 
