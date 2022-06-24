@@ -1,8 +1,10 @@
+/* eslint-disable */ 
 import {
   legacy_createStore as createStore,
   combineReducers,
   applyMiddleware,
 } from 'redux';
+/* eslint-enable */
 import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
